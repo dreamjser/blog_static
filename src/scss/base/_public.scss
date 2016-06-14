@@ -1,0 +1,82 @@
+body{
+    background-color: #fff;
+    @include scrollbar;
+}
+
+body, button, input, select, textarea {
+    font-family: "Helvetica Neue", Helvetica, STHeiTi,"Hiragino Sans GB","Microsoft YaHei",tahoma,sans-serif;
+}
+
+ul,ol{
+  padding: 0;
+}
+
+ol{
+  list-style-position:inside;
+}
+
+button{
+  outline: none !important;
+}
+
+.glyphicon{
+  overflow: hidden;
+}
+.pub-title{
+  font-size: 20px;
+  border-left: 3px $blue solid;
+  padding-left: 10px;
+}
+.pagination-box{
+  overflow: hidden;
+  .pagination{
+    float: right;
+  }
+}
+.footer{
+  padding: 40px 0 8px;
+  color: $grey-heavy;
+  font-size: 16px;
+  text-align: center;
+}
+
+.navbar-right{
+  .glyphicon-search{
+    width: 14px;
+    height: 14px;
+  }
+}
+
+.mod-tips{
+  display: none;
+  position: fixed;
+  width: 200px;
+  margin: auto;
+  left: 0;
+  right: 0;
+  top: 45%;
+  text-align: center;
+  opacity: 0;
+  transform: translate3d(0,-10px,0);
+  transition: all 0.3s ease-out;
+  i{
+    position: relative;
+    top: 2px;
+  }
+  span{
+    display: inline-block;
+    padding: 4px 10px;
+    color: #fff;
+    font-size: 14px;
+    border-radius: 3px;
+    background-color: rgba(3,136,250,.9);
+  }
+  em{
+    font-style: normal;
+  }
+}
+
+.mod-tips-animation{
+  opacity: 1;
+  transform: translate3d(0,0,0);
+}

@@ -1,0 +1,13 @@
+$color: #555;
+.article-content{
+  margin-top: 20px;
+  color: $color;
+  font-size: 18px;
+  p{
+    text-indent: 2em;
+    color: $color !important;
+    & *{
+      color: $color !important;
+    }
+  }
+}

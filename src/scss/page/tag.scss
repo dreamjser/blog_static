@@ -1,0 +1,10 @@
+@import '../base/_variables';
+@import '../base/_mixins';
+@import '../modules/_sprite-icon';
+@import '../modules/_article-list';
+@import '../modules/_nav';
+
+.tag-title{
+  font-size: 24px;
+  margin-bottom: 20px;
+}

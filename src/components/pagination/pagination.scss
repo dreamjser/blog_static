@@ -1,0 +1,12 @@
+@import '../../scss/base/_variables';
+@import '../../scss/base/_mixins';
+
+ul{
+  list-style-type: none;
+}
+.component-pagination{
+  .ellipsis{
+      cursor: text;
+      color: $grey-light;
+    }
+}

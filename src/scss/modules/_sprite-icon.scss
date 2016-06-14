@@ -1,0 +1,7 @@
+@import './_sprite.scss';
+
+.sprite{
+  display: inline-block;
+}
+
+@include sprites($spritesheet-sprites);

@@ -1,0 +1,22 @@
+@import '../base/_variables';
+@import '../base/_mixins';
+@import '../modules/_sprite-icon';
+@import '../modules/_nav';
+
+.file-menu{
+  padding-left: 8px;
+  a{
+    margin-right: 10px;
+  }
+}
+.file-list{
+  margin-top: 10px;
+  list-style: none;
+  font-size: 16px;
+  li{
+    margin-top: 4px;
+  }
+  .no-data{
+    padding: 10px 0;
+  }
+}

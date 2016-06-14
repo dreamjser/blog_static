@@ -1,0 +1,43 @@
+@import '../base/_variables';
+@import '../base/_mixins';
+@import '../modules/_sprite-icon';
+@import '../modules/_nav';
+@import '../modules/_article';
+
+.article-header{
+  h1{
+    position: relative;
+    color: $grey-heavy;
+    i{
+      position: absolute;
+      right: 0;
+      top: -70%;
+    }
+  }
+  .article-time{
+    color: $grey-light;
+    i{
+      width: 16px;
+      height: 16px;
+      margin-left: 30px;
+      vertical-align: middle;
+    }
+  }
+
+}
+.article-tags{
+  strong{
+    color: #555;
+  }
+  strong,a{
+    vertical-align: middle;
+  }
+  padding: 20px 0 22px;
+  font-size: 20px;
+}
+
+.article-nodata{
+  color: red;
+  font-size: 26px;
+  text-align: center;
+}

@@ -1,0 +1,70 @@
+@import '../../scss/base/_variables';
+@import '../../scss/base/_mixins';
+
+.component-comment{
+  margin-top: 30px;
+  h4{
+    padding-left: 10px;
+    border-left: 2px $blue solid;
+    color: $grey-heavy;
+  }
+  textarea{
+    resize: none;
+  }
+  .comment-total{
+    color: $grey-light;
+    font-size: 14px;
+  }
+  .comment-submit{
+    margin: 20px 0;
+    input{
+      width: 160px;
+    }
+    label{
+      color: $grey-heavy;
+      font-size: 16px;
+    }
+    span{
+      float: left;
+    }
+    button{
+      float: right;
+    }
+  }
+  .comment-list{
+    padding-bottom: 20px;
+    li{
+      padding-top: 10px;
+      border-top: 1px $grey-light dashed;
+    }
+    .comment-nodata{
+      border: none;
+      text-align: center;
+      font-size: 18px;
+    }
+  }
+
+  .comment-reply{
+    padding: 10px 20px;
+    border-radius: 5px;
+    background-color: #efefef;
+  }
+
+  .comment-name{
+    color: $blue;
+    vertical-align: middle;
+  }
+  .comment-time{
+    margin-left: 20px;
+    color: $grey-light;
+    vertical-align: middle;
+  }
+  .comment-content{
+    color: $grey-heavy;
+    font-size: 16px;
+  }
+  .comment-replybtn{
+    text-align: right;
+  }
+
+}

@@ -1,0 +1,58 @@
+.mod-article-list{
+  h2{
+    font-size: 20px;
+    a,i{
+      vertical-align: middle;
+    }
+  }
+  .article-content{
+    font-size: 14px;
+    line-height: 1.6;
+    text-indent: 2em;
+    a{
+      color: #666;
+      &:hover,&:active{
+        color: #666;
+        text-decoration: none;
+      }
+    }
+  }
+  .article-type{
+    margin-top: -5px;
+    .article-category,.article-tags{
+      padding: 5px 0;
+      float: left;
+      strong{
+        color: #555;
+      }
+      strong,a{
+        vertical-align: middle;
+      }
+    }
+    .article-tags{
+      a{
+        margin-right: 6px;
+      }
+    }
+    .article-category{
+      margin-right: 20px;
+    }
+  }
+  .article-info{
+    margin-top: 10px;
+    font-size: 12px;
+    span{
+      color: $grey-light;
+    }
+    .info-right{
+      float: right;
+      span{
+        margin-left: 20px;
+      }
+    }
+    .glyphicon{
+      width: 12px;
+      height: 12px;
+    }
+  }
+}
