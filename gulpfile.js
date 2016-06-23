@@ -37,8 +37,7 @@ const REPLACE_REG = /((?:\.\.\/)+)([^"\(\)]+\.(?:gif|jpe?g|png|woff2?|ttf|svg|eo
 const scssSrcArr = [path.src + 'scss/[^_]*.scss', path.src + 'scss/**/[^_]*.scss'];
 // 监听的静态文件路径
 const watchAssets = {
-  html: path.src + 'templates/**',
-  scss: [path.src + 'scss/**', path.src + 'templates/**/*.scss'],
+  scss: [path.src + 'scss/**'],
   js: [path.src + 'js/@(entry|modules)/**', path.src + 'components/**']
 }
 
@@ -109,11 +108,6 @@ gulp.task('connect', function() {
 
 // 监听
 gulp.task('watch', function() {
-  gulp.watch(watchAssets.html)
-    .on('change', function() {
-      gulp.src(watchAssets.html)
-        .pipe(connect.reload());
-    });
   gulp.watch(watchAssets.scss, ['scss'])
     .on('change', function() {
       gulp.src(watchAssets.scss)
