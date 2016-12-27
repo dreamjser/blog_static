@@ -1,0 +1,54 @@
+{
+  "parserOptions": {
+      "ecmaVersion": 6,
+      "sourceType": "module",
+      "ecmaFeatures": {
+          "jsx": true
+      }
+  },
+  "env": {
+    "browser": true,
+    "node": true,
+    "jquery": true
+  },
+  "rules": {
+    //警告
+    "no-extra-boolean-cast": 1,               //多余的感叹号转布尔型
+    "no-extra-semi": 1,                       //多余的分号
+    "no-extra-parens": 1,                     //多余的括号
+    "no-empty": 1,                            //空代码块
+    "complexity": [1, 10],                    //圈复杂度大于10 警告
+
+    //常见错误
+    "no-debugger": 2,                         //debugger 调试代码未删除
+    "no-constant-condition": 2,               //常量作为条件
+    "no-dupe-args": 2,                        //参数重复
+    "no-dupe-keys": 2,                        //对象属性重复
+    "no-duplicate-case": 2,                   //case重复
+    "no-empty-character-class": 2,            //正则无法匹配任何值
+    "no-invalid-regexp": 2,                   //无效的正则
+    "valid-typeof": 2,                        //无效的类型判断
+    "no-unreachable": 2,                      //不可能执行到的代码
+    "no-unexpected-multiline": 2,             //行尾缺少分号可能导致一些意外情况
+    "no-shadow-restricted-names": 2,          //关键词与命名冲突
+    "no-cond-assign": 2,                      //条件语句中禁止赋值操作
+
+    //代码风格优化
+    "no-multi-spaces": 1,                     //不允许多个空格
+    "block-scoped-var": 2,                    //变量定义后未使用
+    "accessor-pairs": 2,                      //object getter/setter方法需要成对出现
+    "dot-location": [2, "property"],          //换行调用对象方法  点操作符应写在行首
+    "no-lone-blocks": 2,                      //多余的{}嵌套
+    "no-floating-decimal": 2,                 //浮点型需要写全 禁止.1 或 2.写法
+    "no-self-compare": 2,                     //不允与自己比较作为条件
+    "no-redeclare": [2, {"builtinGlobals": true}],//不允许重复声明
+    "no-unused-expressions": [2, {"allowShortCircuit": true, "allowTernary": true}],//未使用的表达式
+    "no-with": 2,                             //禁用with
+
+    //es6
+    "no-class-assign": 2,
+    "no-const-assign": 2,
+    "no-dupe-class-members": 2,
+    "constructor-super": 2
+  }
+}
