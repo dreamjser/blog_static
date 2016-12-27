@@ -1,6 +1,6 @@
 # dreamjser博客的前端文件目录
 
-博客地址：[dreamjser](http://www.dramjser.com)
+博客地址：[dreamjser](http://www.dreamjser.com)
 
 整个项目的前端和服务器端是放到同一个版本库里的，远程的版本库也是搭建在了自己的服务器上，github上只是将前端开发的文件放上去以供有需要的同学了解整个项目的目录，之后不会频繁的去更新
 
@@ -9,3 +9,4 @@
 - webpack升级到webpack2，不在用gulp去构建js，而是用webpack直接构建。
 - 优化了gulp的众多task，把之前很多在dist目录下操作的任务几乎全部优化（以前的想法真的蠢）。构建速度快乐好多~
 - 将评论组件，回顶部组件改成按需加载，减少首页加载时间。
+
