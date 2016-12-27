@@ -3,16 +3,20 @@
 @import '../modules/_sprite-icon';
 @import '../modules/_nav';
 @import '../modules/_article';
+@import '../modules/_comment';
 
 .article-header{
+  position: relative;
   h1{
-    position: relative;
     color: $grey-heavy;
     i{
       position: absolute;
-      right: 0;
-      top: -70%;
+      right: 0px;
+      top: -25px;
     }
+  }
+  .top-header{
+    margin-right: 80px;
   }
   .article-time{
     color: $grey-light;
@@ -23,7 +27,13 @@
       vertical-align: middle;
     }
   }
-
+}
+.article-content{
+  h2{
+    padding-left: 8px;
+    border-left: 3px $blue solid;
+    font-size: 28px;
+  }
 }
 .article-tags{
   strong{

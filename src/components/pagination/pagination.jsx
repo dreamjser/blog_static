@@ -69,10 +69,6 @@ class Pagination extends React.Component {
     return pageData;
   }
 
-  getPage() {
-    console.log(this.props.page);
-  }
-
   goPrevPage() {
     let page = this.props.page;
 
@@ -122,7 +118,6 @@ class Pagination extends React.Component {
     let perpage = this.props.perpage;
     let pagenum = Math.ceil(total / perpage);
     let html = '';
-    let _this = this;
 
     if (pagenum > 1) {
       html =
@@ -133,9 +128,14 @@ class Pagination extends React.Component {
             </a>
           </li>
           {
-            pageData.map(function(ele, index) {
-              let goToPage = _this.goToPage.bind(_this, ele);
-              return <li onClick={goToPage} className={ele==page?'active':''} key={index}><a className={ele=='...'? 'ellipsis':''} href="javascript:;">{ele}</a></li>
+            pageData.map((ele, index) => {
+              let goToPage = this.goToPage.bind(this, ele);
+              let li =
+              <li onClick={goToPage} className={ele==page?'active':''} key={index}>
+               <a className={ele=='...'? 'ellipsis':''} href="javascript:;">{ele}</a>
+              </li>
+
+              return li;
             })
           }
           <li className={page==pagenum?'disabled':''} onClick={this.goNextPage.bind(this)}>

@@ -20,19 +20,13 @@ class Tips {
 	}
 
 	addTipsClass() {
-		let _this = this;
 		this.addTimeOut && clearTimeout(this.addTimeOut);
-		this.addTimeOut = setTimeout(function () {
-			_this.wrap.addClass(TIPS_CLASS_ANIMATION);
-		}, 0);
+		this.addTimeOut = setTimeout(() => this.wrap.addClass(TIPS_CLASS_ANIMATION), 0);
 	}
 
 	removeTipsClass() {
-		let _this = this;
 		this.removeTimeOut && clearTimeout(this.removeTimeOut);
-		this.removeTimeOut = setTimeout(function () {
-			_this.wrap.removeClass(TIPS_CLASS_ANIMATION);
-		}, 2000);
+		this.removeTimeOut = setTimeout(() => this.wrap.removeClass(TIPS_CLASS_ANIMATION), 2000);
 	}
 }
 

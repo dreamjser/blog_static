@@ -3,11 +3,37 @@ $color: #555;
   margin-top: 20px;
   color: $color;
   font-size: 18px;
+  word-break: break-all;
+  line-height: 1.65;
   p{
-    text-indent: 2em;
     color: $color !important;
+    text-indent: 2em;
     & *{
       color: $color !important;
+    }
+    a{
+      color: $blue !important;
+      text-decoration: underline !important;
+    }
+  }
+  ul{
+    list-style-position: inside;
+  }
+  h2{
+    margin: 30px 0 20px;
+  }
+  pre{
+    margin-bottom: 20px;
+  }
+  table{
+    th,td{
+      padding: 8px 20px;
+      border: 1px $color solid;
+    }
+    tbody>tr{
+      &:nth-child(odd){
+        background: #efefef;
+      }
     }
   }
 }
