@@ -17,10 +17,6 @@ var webpackConfig = {
     tag: config.entry + 'tag.js',
     category: config.entry + 'category.js',
     about: config.entry + 'about.js',
-    common: [
-      'react',
-      'react-dom'
-    ]
   },
   output: {
     publicPath: staticCND,
@@ -28,9 +24,7 @@ var webpackConfig = {
     chunkFilename: config.distEnsure + '[name].[chunkhash:8].js'
   },
   plugins: [
-    new webpack.optimize.CommonsChunkPlugin({
-      names: ['common']
-    }),
+    new webpack.optimize.CommonsChunkPlugin('common'),
     new webpack.optimize.UglifyJsPlugin(),
     new webpack.DefinePlugin({
       'process.env': {
@@ -39,21 +33,27 @@ var webpackConfig = {
     })
   ],
   module: {
-    noParse: [
-      /^react$/,
-      /^react-dom$/
-    ],
     rules: [{
       test: /\.scss$/,
-      exclude: /node_modules/,
+      include: [
+        /src\/components/,
+        /src\/scss/,
+      ],
       use: ['style', 'css', 'sass']
     }, {
       test: /\.(js|jsx)$/,
-      exclude: /node_modules/,
+      include: [
+        /src\/components/,
+        /src\/js\/entry/,
+        /src\/js\/modules/,
+      ],
       use: ['eslint', 'babel']
     }, {
       test: /\.(gif|png|jpg)$/,
-      exclude: /node_modules/,
+      include: [
+        /src\/components/,
+        /src\/images/,
+      ],
       loader: 'url'
     }]
   },
@@ -71,10 +71,12 @@ var webpackConfig = {
       'module.api': 'src/js/modules/api',
       'module.load-comment': 'src/js/modules/load-comment',
       'module.load-return-top': 'src/js/modules/load-return-top',
-      // 框架
-      'react': 'node_modules/react/dist/react.min',
-      'react-dom': 'node_modules/react-dom/dist/react-dom.min',
     }
+  },
+  externals: {
+    'jquery': 'jQuery',
+    'react': 'React',
+    'react-dom': 'ReactDOM'
   },
   resolveLoader: {
     moduleExtensions: ["-loader"]

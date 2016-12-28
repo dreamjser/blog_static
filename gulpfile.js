@@ -7,6 +7,7 @@ const clean = require('gulp-clean');
 const rev = require('gulp-rev');
 const plumber = require('gulp-plumber');
 const uglify = require('gulp-uglify');
+const concat = require('gulp-concat');
 const eslint = require('gulp-eslint');
 const minicss = require('gulp-clean-css');
 const revcss = require('gulp-rev-css-url');
@@ -55,19 +56,34 @@ gulp.task('prod', function () {
 	runSequence('clean', 'scss', 'rev', ['replace:json', 'imagemin']);
 });
 
-/****************************************** 开发环境 ********************************************/
+/****************************************** 独立执行 ********************************************/
+
+gulp.task('js', function(){
+  return gulp.src([
+      'node_modules/jquery/dist/jquery.min.js',
+      'node_modules/bootstrap/dist/js/bootstrap.min.js',
+      'node_modules/promise-polyfill/promise.min.js',
+      'node_modules/react/dist/react.min.js',
+      'node_modules/react-dom/dist/react-dom.min.js'
+    ])
+    .pipe(concat('framework.js'))
+    .pipe(uglify())
+    .pipe(gulp.dest(path.src + 'js/utils'));
+});
 
 // 生成css sprite
 gulp.task('sprites', function () {
-	return gulp.src(path.src + 'images/_sprites/*.png')
-		.pipe(spritesmith({
-			imgName: 'sprite.png',
-			cssName: '_sprite.scss',
-			imgPath: '../../images/sprites/sprite.png',
-			padding: 5
-		}))
-		.pipe(gulpif('*.png', gulp.dest(path.src + 'images/sprites'), gulp.dest(path.src + 'scss/modules')));
+  return gulp.src(path.src + 'images/_sprites/*.png')
+    .pipe(spritesmith({
+      imgName: 'sprite.png',
+      cssName: '_sprite.scss',
+      imgPath: '../../images/sprites/sprite.png',
+      padding: 5
+    }))
+    .pipe(gulpif('*.png', gulp.dest(path.src + 'images/sprites'), gulp.dest(path.src + 'scss/modules')));
 });
+
+/****************************************** 开发环境 ********************************************/
 
 // scss编译
 gulp.task('scss', function () {
@@ -83,7 +99,7 @@ gulp.task('scss', function () {
 		.pipe(production(autoprefixer()))
 		.pipe(production(minicss()))
 		.pipe(production(replace(REPLACE_REG, PROD_HOST + '$2')))
-		.pipe(development(gulp.dest(path.src + 'css')))
+    .pipe(development(gulp.dest(path.src + 'css')))
 		.pipe(production(gulp.dest(path.src + 'css')));
 });
 

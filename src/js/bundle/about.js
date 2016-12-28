@@ -1,19 +1,30 @@
-webpackJsonp([3],{
+webpackJsonp([3],[
+/* 0 */,
+/* 1 */
+/***/ function(module, exports) {
 
-/***/ 3:
+eval("module.exports = React;//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiMS5qcyIsInNvdXJjZXMiOlsid2VicGFjazovLy9leHRlcm5hbCBcIlJlYWN0XCI/OWRlOSJdLCJzb3VyY2VzQ29udGVudCI6WyJtb2R1bGUuZXhwb3J0cyA9IFJlYWN0O1xuXG5cbi8vLy8vLy8vLy8vLy8vLy8vL1xuLy8gV0VCUEFDSyBGT09URVJcbi8vIGV4dGVybmFsIFwiUmVhY3RcIlxuLy8gbW9kdWxlIGlkID0gMVxuLy8gbW9kdWxlIGNodW5rcyA9IDIgMyA0IDUgNiA3Il0sIm1hcHBpbmdzIjoiQUFBQSIsInNvdXJjZVJvb3QiOiIifQ==");
+
+/***/ },
+/* 2 */
+/***/ function(module, exports) {
+
+eval("module.exports = ReactDOM;//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiMi5qcyIsInNvdXJjZXMiOlsid2VicGFjazovLy9leHRlcm5hbCBcIlJlYWN0RE9NXCI/NGFiNCJdLCJzb3VyY2VzQ29udGVudCI6WyJtb2R1bGUuZXhwb3J0cyA9IFJlYWN0RE9NO1xuXG5cbi8vLy8vLy8vLy8vLy8vLy8vL1xuLy8gV0VCUEFDSyBGT09URVJcbi8vIGV4dGVybmFsIFwiUmVhY3RET01cIlxuLy8gbW9kdWxlIGlkID0gMlxuLy8gbW9kdWxlIGNodW5rcyA9IDIgMyA0IDUgNiA3Il0sIm1hcHBpbmdzIjoiQUFBQSIsInNvdXJjZVJvb3QiOiIifQ==");
+
+/***/ },
+/* 3 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
 eval("\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\n\nvar _react = __webpack_require__(1);\n\nvar _react2 = _interopRequireDefault(_react);\n\nvar _reactDom = __webpack_require__(2);\n\nvar _reactDom2 = _interopRequireDefault(_reactDom);\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n\n// 评论随机token\nvar token = $('#token').val();\nvar aid = $('#aid').val();\nvar $comment = $('#J_comment');\nvar commentTop = $comment.offset().top;\nvar loadingClass = 'comment-loading';\n\nvar handleUpdateComment = function handleUpdateComment() {\n  $('html,body').animate({\n    scrollTop: commentTop\n  }, 200);\n};\n\nvar loadComment = {\n  init: function init() {\n    this.bindEvent();\n  },\n\n  bindEvent: function bindEvent() {\n    var _this = this;\n\n    this.checkCommentLocation();\n    $(window).on('scroll.comment', function () {\n      return _this.checkCommentLocation();\n    });\n  },\n  checkCommentLocation: function checkCommentLocation() {\n    var scrollTop = $(window).scrollTop();\n    var winHeight = $(window).height();\n\n    if (commentTop < winHeight + scrollTop) {\n\n      __webpack_require__.e/* nsure */(1).then((function () {\n        var _require = __webpack_require__(4),\n            Comment = _require.Comment;\n\n        _reactDom2.default.render(_react2.default.createElement(Comment, { aid: aid, token: token, onUpdateComment: handleUpdateComment }), $comment[0]);\n\n        $comment.removeClass(loadingClass);\n      }).bind(null, __webpack_require__)).catch(__webpack_require__.oe);\n\n      $(window).off('scroll.comment');\n    }\n  }\n};\n\nexports.default = loadComment;//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiMy5qcyIsInNvdXJjZXMiOlsid2VicGFjazovLy9zcmMvanMvbW9kdWxlcy9sb2FkLWNvbW1lbnQuanM/YWQzMCJdLCJzb3VyY2VzQ29udGVudCI6WyJpbXBvcnQgUmVhY3QgZnJvbSAncmVhY3QnO1xuaW1wb3J0IFJlYWN0RE9NIGZyb20gJ3JlYWN0LWRvbSc7XG5cbi8vIOivhOiuuumaj+acunRva2VuXG5jb25zdCB0b2tlbiA9ICQoJyN0b2tlbicpLnZhbCgpO1xuY29uc3QgYWlkID0gJCgnI2FpZCcpLnZhbCgpO1xuY29uc3QgJGNvbW1lbnQgPSAkKCcjSl9jb21tZW50Jyk7XG5jb25zdCBjb21tZW50VG9wID0gJGNvbW1lbnQub2Zmc2V0KCkudG9wO1xuY29uc3QgbG9hZGluZ0NsYXNzID0gJ2NvbW1lbnQtbG9hZGluZyc7XG5cbmNvbnN0IGhhbmRsZVVwZGF0ZUNvbW1lbnQgPSBmdW5jdGlvbigpIHtcbiAgJCgnaHRtbCxib2R5JykuYW5pbWF0ZSh7XG4gICAgc2Nyb2xsVG9wOiBjb21tZW50VG9wXG4gIH0sIDIwMCk7XG59O1xuXG5jb25zdCBsb2FkQ29tbWVudCA9IHtcbiAgaW5pdDogZnVuY3Rpb24oKSB7XG4gICAgdGhpcy5iaW5kRXZlbnQoKTtcbiAgfSxcblxuICBiaW5kRXZlbnQ6IGZ1bmN0aW9uKCkge1xuICAgIHRoaXMuY2hlY2tDb21tZW50TG9jYXRpb24oKTtcbiAgICAkKHdpbmRvdykub24oJ3Njcm9sbC5jb21tZW50JywgKCkgPT4gdGhpcy5jaGVja0NvbW1lbnRMb2NhdGlvbigpKTtcbiAgfSxcbiAgY2hlY2tDb21tZW50TG9jYXRpb246IGZ1bmN0aW9uKCkge1xuICAgIGxldCBzY3JvbGxUb3AgPSAkKHdpbmRvdykuc2Nyb2xsVG9wKCk7XG4gICAgbGV0IHdpbkhlaWdodCA9ICQod2luZG93KS5oZWlnaHQoKTtcblxuICAgIGlmIChjb21tZW50VG9wIDwgd2luSGVpZ2h0ICsgc2Nyb2xsVG9wKSB7XG5cbiAgICAgIHJlcXVpcmUuZW5zdXJlKFtdLCBmdW5jdGlvbigpIHtcbiAgICAgICAgY29uc3Qge1xuICAgICAgICAgIENvbW1lbnRcbiAgICAgICAgfSA9IHJlcXVpcmUoJ2NvbXBvbmVudC5jb21tZW50Jyk7XG5cbiAgICAgICAgUmVhY3RET00ucmVuZGVyKDxDb21tZW50IGFpZD17YWlkfSB0b2tlbj17dG9rZW59IG9uVXBkYXRlQ29tbWVudD17aGFuZGxlVXBkYXRlQ29tbWVudH0gLz4sICRjb21tZW50WzBdKTtcblxuICAgICAgICAkY29tbWVudC5yZW1vdmVDbGFzcyhsb2FkaW5nQ2xhc3MpO1xuXG4gICAgICB9LCAnY29tbWVudCcpO1xuXG4gICAgICAkKHdpbmRvdykub2ZmKCdzY3JvbGwuY29tbWVudCcpO1xuICAgIH1cbiAgfVxufVxuXG5leHBvcnQgZGVmYXVsdCBsb2FkQ29tbWVudDtcblxuXG5cbi8vIFdFQlBBQ0sgRk9PVEVSIC8vXG4vLyBzcmMvanMvbW9kdWxlcy9sb2FkLWNvbW1lbnQuanMiXSwibWFwcGluZ3MiOiI7Ozs7OztBQUFBO0FBQ0E7OztBQUFBO0FBQ0E7Ozs7O0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFEQTtBQUdBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFBQTtBQUNBO0FBQUE7QUFDQTtBQUFBO0FBQUE7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQUE7QUFBQTtBQUNBO0FBSUE7QUFDQTtBQUNBO0FBRUE7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQTVCQTtBQUNBO0FBOEJBIiwic291cmNlUm9vdCI6IiJ9");
 
 /***/ },
-
-/***/ 5:
+/* 4 */,
+/* 5 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
 eval("\n\nvar _module = __webpack_require__(3);\n\nvar _module2 = _interopRequireDefault(_module);\n\nvar _module3 = __webpack_require__(0);\n\nvar _module4 = _interopRequireDefault(_module3);\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n\n_module2.default.init();\n_module4.default.init();//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiNS5qcyIsInNvdXJjZXMiOlsid2VicGFjazovLy9zcmMvanMvZW50cnkvYWJvdXQuanM/NDAzMCJdLCJzb3VyY2VzQ29udGVudCI6WyJpbXBvcnQgbG9hZENvbW1lbnQgZnJvbSAnbW9kdWxlLmxvYWQtY29tbWVudCc7XG5pbXBvcnQgbG9hZFJldHVyblRvcCBmcm9tICdtb2R1bGUubG9hZC1yZXR1cm4tdG9wJztcblxubG9hZENvbW1lbnQuaW5pdCgpO1xubG9hZFJldHVyblRvcC5pbml0KCk7XG5cblxuXG4vLyBXRUJQQUNLIEZPT1RFUiAvL1xuLy8gc3JjL2pzL2VudHJ5L2Fib3V0LmpzIl0sIm1hcHBpbmdzIjoiOztBQUFBO0FBQ0E7OztBQUFBO0FBQ0E7Ozs7O0FBQ0E7Iiwic291cmNlUm9vdCI6IiJ9");
 
 /***/ }
-
-},[5]);
+],[5]);

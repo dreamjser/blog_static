@@ -16,10 +16,6 @@ var webpackConfig = {
 		tag: config.entry + 'tag.js',
 		category: config.entry + 'category.js',
 		about: config.entry + 'about.js',
-		common: [
-			'react',
-			'react-dom'
-		]
 	},
 	output: {
 		publicPath: staticCND,
@@ -27,32 +23,36 @@ var webpackConfig = {
 		chunkFilename: config.ensure + '[name].js'
 	},
 	plugins: [
-		new webpack.optimize.CommonsChunkPlugin({
-			names: ['common']
-		}),
 		new webpack.LoaderOptionsPlugin({
 			debug: true
 		}),
+    new webpack.optimize.CommonsChunkPlugin('common'),
 	],
 	module: {
-    noParse: [
-      /^react$/,
-      /^react-dom$/
-    ],
-		rules: [{
-			test: /\.scss$/,
-      exclude: /node_modules/,
-			use: ['style', 'css', 'sass']
-		}, {
-			test: /\.(js|jsx)$/,
-      exclude: /node_modules/,
-			use: ['eslint', 'babel']
-		}, {
-			test: /\.(gif|png|jpg)$/,
-      exclude: /node_modules/,
-			loader: 'url'
-		}]
-	},
+    rules: [{
+      test: /\.scss$/,
+      include: [
+        /src\/components/,
+        /src\/scss/,
+      ],
+      use: ['style', 'css', 'sass']
+    }, {
+      test: /\.(js|jsx)$/,
+      include: [
+        /src\/components/,
+        /src\/js\/entry/,
+        /src\/js\/modules/,
+      ],
+      use: ['eslint', 'babel']
+    }, {
+      test: /\.(gif|png|jpg)$/,
+      include: [
+        /src\/components/,
+        /src\/images/,
+      ],
+      loader: 'url'
+    }]
+  },
 	resolve: {
 		modules: [__dirname, 'node_modules'],
 		extensions: [".js", ".json", ".jsx"],
@@ -67,14 +67,16 @@ var webpackConfig = {
 			'module.api': 'src/js/modules/api',
       'module.load-comment': 'src/js/modules/load-comment',
       'module.load-return-top': 'src/js/modules/load-return-top',
-			// 框架
-			'react': 'node_modules/react/dist/react.min',
-			'react-dom': 'node_modules/react-dom/dist/react-dom.min',
 		}
 	},
 	resolveLoader: {
 		moduleExtensions: ["-loader"]
 	},
+  externals: {
+    'jquery': 'jQuery',
+    'react': 'React',
+    'react-dom': 'ReactDOM'
+  },
   watch: true,
   watchOptions: {
     aggregateTimeout: 1000,
